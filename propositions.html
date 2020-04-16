@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<link rel="stylesheet" type="text/css" href="style_sch.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<title>Destino Deliverables</title>
+
+</head>
+
+<body>
+<script src="main.js"></script>
+<header>
+<h1>DESTINO 2020 - DELIVERABLES</h1>
+</header>
+<div>
+<nav>
+<ul>
+<li><a class="active" href="index.html">PRESIDENTIAL</a></li>
+<li><a href="senate.html">SENATE</a></li>
+<li><a href="house.html">HOUSE</a></li>
+<li><a href="gobernors.html">GOBERNORS</a></li>
+<li><a href="propositions.html">PROPOSITIONS</a></li>
+<li><a href="ticker.html">TICKER</a></li>
+</ul>
+</nav>
+</div>
+<table id="reservationTable">
+ <tr>
+    <th>NAME</th>
+    <th>RACE TYPE</th>
+    <th>GRAPHIC TYPE</th>
+    <th>TOUCHSCREEN</th>
+    <th>FULL SCREEN</th>
+    <th>MAIN WALL</th>
+    <th>LARGE WALL</th>
+    <th>NCAM</th>
+	<th>NEWSROOM WALL</th>
+	<th>TITLE</th>
+	<th>SUBTITLE</th>
+	<th>SUBTITLE 2</th>
+	<th>DESCRIPTION</th>
+	<th>SAMPLE</th>
+ </tr>
+    
+    
+<tr class="">
+    <td>P1</td>
+    <td>PROPOSITIONS</td>
+	<td>FULL SCREEN</td>
+	<td></td>
+	<td>X</td>
+	<td></td>
+	<td>X</td>
+	<td></td>
+	<td></td>
+	<td>PROPOSICIONES</td>
+	<td>STATE</td>
+	<td></td>
+	<td>PROPOSITIONS YES/NO/PENDING</td>
+	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+</tr>
+
+    
+
+
+    
+</table>
+<script>
+$(document).ready(function() {
+  $('.template-article img').each(function() {
+      var currentImage = $(this);
+      currentImage.wrap("<a class='image-link' href='" + currentImage.attr("src") + "'</a>");
+  });
+  $('.image-link').magnificPopup({type:'image'});  
+});
+</script>
+    
+</body>
+
+</html>
