@@ -62,7 +62,7 @@
 	<td></td>
 	<td></td>
 	<td>VIDEO BOXES</td>
-	<td><a class="image-link" href="images/MISC/boxes_d16.png"><img id="myImg" class = "image-link" src="images/MISC/boxes_d16.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/MISC/boxes_d16.png" alt="BOXES" style="width:70%;max-width:200px"></td>
 </tr>
     
     
@@ -80,7 +80,7 @@
 	<td>STATE</td>
 	<td></td>
 	<td>PROPOSITIONS YES/NO/PENDING</td>
-	<td><a class="image-link" href="images/MISC/PROPOSITIONS_YES_APPROVED.png"><img id="myImg" class = "image-link" src="images/MISC/PROPOSITIONS_YES_APPROVED.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/MISC/PROPOSITIONS_YES_APPROVED.png" alt="PROPOSITIONS" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -97,7 +97,7 @@
 	<td></td>
 	<td></td>
 	<td>MAP WITH UPCOMING CLOSING STATES</td>
-	<td><a class="image-link" href="images/MISC/POLL_CLOSING_TIME_EN_SOLO_MINUTOS.png"><img id="myImg" class = "image-link" src="images/MISC/POLL_CLOSING_TIME_EN_SOLO_MINUTOS.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/MISC/POLL_CLOSING_TIME_EN_SOLO_MINUTOS.png" alt="EN SOLO MINUTOS MAP" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -114,7 +114,7 @@
 	<td></td>
 	<td></td>
 	<td>MAP WITH CLOSING TIMES BY STATE</td>
-	<td><a class="image-link" href="images/MISC/HORA_DE_CIERRE.png"><img id="myImg" class = "image-link" src="images/MISC/HORA_DE_CIERRE.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/MISC/HORA_DE_CIERRE.png" alt="HORA DE CIERRE MAP" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -131,7 +131,7 @@
 	<td></td>
 	<td></td>
 	<td>SOCIAL MEDIA COMMENTS</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></td>
 </tr>
 
 
@@ -149,7 +149,7 @@
 	<td>RESULTADO AND COUNTY</td>
 	<td>RECINTOS REPORTADOS %</td>
 	<td>2 HEAD AND PERCENTAGE</td>
-	<td><a class="image-link" href="images/SENATE/SENATE_2HEAD_PERCENTAGE.png"><img id="myImg" class = "image-link" src="images/SENATE/SENATE_2HEAD_PERCENTAGE.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/SENATE/SENATE_2HEAD_PERCENTAGE.png" alt="IMAGE" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -166,25 +166,38 @@
 	<td>GANADOR Y NOMBRE DEL CONDADO</td>
 	<td></td>
 	<td>ONE HEAD WINNER</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
-</tr>
-
-
-
-
-    
-
-
-    
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></td>
+</tr>   
 </table>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
 <script>
-$(document).ready(function() {
-  $('.template-article img').each(function() {
-      var currentImage = $(this);
-      currentImage.wrap("<a class='image-link' href='" + currentImage.attr("src") + "'</a>");
-  });
-  $('.image-link').magnificPopup({type:'image'});  
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
 });
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
 </script>
     
 </body>

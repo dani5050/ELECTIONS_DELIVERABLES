@@ -63,7 +63,7 @@
 	<td>ESTADO</td>
 	<td>RECINTOS REPORTADOS %</td>
 	<td></td>
-	<td><a class="image-link" href="images/TICKER/D20-FS-TICKER-L3_01.png"><img id="myImg" class = "image-link" src="images/TICKER/D20-FS-TICKER-L3_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/TICKER/D20-FS-TICKER-L3_01.png" alt="TICKER STATES RESULTS" style="width:70%;max-width:200px"></td>
 </tr>
 
     
@@ -81,7 +81,7 @@
 	<td>ESTADO</td>
 	<td>POPULAR VOTE</td>
 	<td>CANDIDATES AND PERCENTAGE</td>
-	<td><a class="image-link" href="images/TICKER/D20-FS-TICKER-L3_03.png"><img id="myImg" class = "image-link" src="images/TICKER/D20-FS-TICKER-L3_03.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/TICKER/D20-FS-TICKER-L3_03.png" alt="TICKER VOTO POPULAR" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -98,7 +98,7 @@
 	<td>ESTADO</td>
 	<td>ELECTORAL VOTE</td>
 	<td>CANDIDATES AND ELECTORAL VOTE</td>
-	<td><a class="image-link" href="images/TICKER/D20-FS-TICKER-L3_04.png"><img id="myImg" class = "image-link" src="images/TICKER/D20-FS-TICKER-L3_04.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/TICKER/D20-FS-TICKER-L3_04.png" alt="TICKER CONTEO ELECTORAL" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -115,7 +115,7 @@
 	<td>BANNER</td>
 	<td>ONE LINE</td>
 	<td>ONE LINE OF TEXT</td>
-	<td><a class="image-link" href="images/TICKER/D20-FS-TICKER-L3_1_LINE.png"><img id="myImg" class = "image-link" src="images/TICKER/D20-FS-TICKER-L3_1_LINE.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/TICKER/D20-FS-TICKER-L3_1_LINE.png" alt="BANNER ONE LINE" style="width:70%;max-width:200px"></td>
 </tr>
 
 
@@ -133,7 +133,7 @@
 	<td>BANNER</td>
 	<td>TWO LINE</td>
 	<td>NAME LOCATION</td>
-	<td><a class="image-link" href="images/TICKER/D20-FS-TICKER-L3_2_LINE.png"><img id="myImg" class = "image-link" src="images/TICKER/D20-FS-TICKER-L3_2_LINE.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/TICKER/D20-FS-TICKER-L3_2_LINE.png" alt="BANNER TWO LINES" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -150,20 +150,41 @@
 	<td>BANNER</td>
 	<td>INFO LINE</td>
 	<td>TWO LINE OF TEXT</td>
-	<td><a class="image-link" href="images/TICKER/D20-FS-TICKER-L3_INFO.png"><img id="myImg" class = "image-link" src="images/TICKER/D20-FS-TICKER-L3_INFO.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/TICKER/D20-FS-TICKER-L3_INFO.png" alt="BANNER INFO LINE" style="width:70%;max-width:200px"></td>
 </tr>
 
 
     
 </table>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
 <script>
-$(document).ready(function() {
-  $('.template-article img').each(function() {
-      var currentImage = $(this);
-      currentImage.wrap("<a class='image-link' href='" + currentImage.attr("src") + "'</a>");
-  });
-  $('.image-link').magnificPopup({type:'image'});  
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
 });
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
 </script>
     
 </body>

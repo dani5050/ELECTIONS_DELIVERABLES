@@ -63,7 +63,7 @@
 	<td></td>
 	<td></td>
 	<td>NUP DESTINO ELECTIONS NIGHT</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -80,7 +80,7 @@
 	<td></td>
 	<td></td>
 	<td>NUP DESTINO DA SPECIAL</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -97,7 +97,7 @@
 	<td></td>
 	<td></td>
 	<td>PRESIDENTE ELECTO</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -114,7 +114,7 @@
 	<td></td>
 	<td></td>
 	<td>LOGO FOR BUMP IN AND OUT</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></td>
 </tr>
 <tr class="">
     <td>O5</td>
@@ -130,22 +130,40 @@
 	<td></td>
 	<td></td>
 	<td>PRESENT NCAM SEGMENTS</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></td>
 </tr>
 
-    
-
-
-    
+       
 </table>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
 <script>
-$(document).ready(function() {
-  $('.template-article img').each(function() {
-      var currentImage = $(this);
-      currentImage.wrap("<a class='image-link' href='" + currentImage.attr("src") + "'</a>");
-  });
-  $('.image-link').magnificPopup({type:'image'});  
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
 });
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
 </script>
     
 </body>

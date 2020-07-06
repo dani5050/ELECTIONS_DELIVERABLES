@@ -63,7 +63,7 @@
 	<td>RESULTADO AND STATE</td>
 	<td>RECINTOS REPORTADOS %</td>
 	<td>2 HEAD AND PERCENTAGE</td>
-	<td><a class="image-link" href="images/SENATE/D20-FS-VOTE-PERCENTAGE-SEN.png"><img id="myImg" class = "image-link" src="images/SENATE/D20-FS-VOTE-PERCENTAGE-SEN.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/SENATE/D20-FS-VOTE-PERCENTAGE-SEN.png" alt="SENATE RESULTS VOTE PERCENTAGE" style="width:70%;max-width:200px"></td>
 </tr>
 
     
@@ -81,7 +81,7 @@
 	<td>RESULTADO AND STATE</td>
 	<td>RECINTOS REPORTADOS %</td>
 	<td>2 HEAD % TOTAL VOTE COUNT</td>
-	<td><a class="image-link" href="images/SENATE/D20-FS-VOTE-DIFFERENTIAL-SEN.png"><img id="myImg" class = "image-link" src="images/SENATE/D20-FS-VOTE-DIFFERENTIAL-SEN.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/SENATE/D20-FS-VOTE-DIFFERENTIAL-SEN.png" alt="SENATE RESULTS VOTE DIFFERENCE" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -98,7 +98,7 @@
 	<td>ESTADO</td>
 	<td></td>
 	<td>2 HEAD</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="SENATE CONTIENDA REÑIDA" style="width:70%;max-width:200px"></td>
 </tr>
 <tr class="">
     <td>S4</td>
@@ -114,7 +114,7 @@
 	<td>PROYECCION GANADOR</td>
 	<td></td>
 	<td>ONE HEAD WINNER</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="SENATE PROJECTED WINNER" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -131,7 +131,7 @@
 	<td>ESTADOS EN DISPUTA</td>
 	<td></td>
 	<td>LIST OF PROJECTIONS</td>
-	<td><a class="image-link" href="images/image_01.png"><img id="myImg" class = "image-link" src="images/image_01.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/image_01.png" alt="SENATE STATES FOR GRABS" style="width:70%;max-width:200px"></td>
 </tr>
 
 <tr class="">
@@ -148,21 +148,40 @@
 	<td>LIDERAZGO</td>
 	<td></td>
 	<td>LIST OF CURRENT LEADERSHIP</td>
-	<td><a class="image-link" href="images/SENATE/SENATE_LEADERSHIP.png"><img id="myImg" class = "image-link" src="images/SENATE/SENATE_LEADERSHIP.png" alt="IMAGE" style="width:70%;max-width:200px"></a></td>
+	<td><img id="myImg" class = "myImg" src="images/SENATE/SENATE_LEADERSHIP.png" alt="SENATE LEADERSHIP" style="width:70%;max-width:200px"></td>
 </tr>
 
-
-
-    
+   
 </table>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
 <script>
-$(document).ready(function() {
-  $('.template-article img').each(function() {
-      var currentImage = $(this);
-      currentImage.wrap("<a class='image-link' href='" + currentImage.attr("src") + "'</a>");
-  });
-  $('.image-link').magnificPopup({type:'image'});  
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = $('.myImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.myImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
 });
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
 </script>
     
 </body>
